@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.airflow/
+chroma_db/
+logs/
+*.log
+.DS_Store
+.idea/
+.vscode/
+.pytest_cache/
+.Rhistory
+.ipynb_checkpoints/
+
+# данные (в git только описание и картинки в docs/)
+data/raw/*.csv
+data/processed/*
+!data/processed/.gitkeep
+
+# duckdb lock
+*.duckdb

@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: analyst
+      POSTGRES_PASSWORD: analyst
+      POSTGRES_DB: superstore
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql/postgres/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24-alpine
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ./sql/clickhouse/init.sql:/docker-entrypoint-initdb.d/init.sql:ro

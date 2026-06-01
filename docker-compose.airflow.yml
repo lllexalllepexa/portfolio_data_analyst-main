@@ -1,0 +1,27 @@
+# Airflow на Windows — только через Docker (на хосте нет модуля fcntl).
+# Запуск: docker compose -f docker-compose.airflow.yml run --rm airflow-dag-test
+
+services:
+  airflow-dag-test:
+    image: apache/airflow:2.10.4-python3.12
+    environment:
+      AIRFLOW_HOME: /tmp/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /project/dags
+      AIRFLOW_PROJECT_ROOT: /project
+      PYTHONPATH: /project
+    volumes:
+      - ./:/project
+      - airflow-tmp:/tmp/airflow
+    working_dir: /project
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        set -e
+        pip install --quiet pandas pyarrow duckdb scipy scikit-learn
+        airflow db migrate
+        airflow dags test superstore_etl $${LOGICAL_DATE:-2024-01-01}
+
+volumes:
+  airflow-tmp:

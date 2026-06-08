@@ -48,4 +48,4 @@
 
 ## Дашборд
 
-Интерактивные срезы — в [dashboard/README.md](../dashboard/README.md). На GitHub доступны только статические материалы из этой папки.
+Интерактивные срезы — в [dashboard/README.md](../dashboard/README.md).

@@ -45,14 +45,14 @@ python -m superstore.etl.load_and_clean
 | R | `Rscript r/analysis.R` |
 | Пайплайн целиком | `.\scripts\run_pipeline.ps1` |
 
-### С Docker (Docker Desktop должен быть запущен)
+### С Docker
 
 | Действие | Команда |
 |----------|---------|
 | PostgreSQL | `.\scripts\run_postgres.ps1` |
 | Airflow | `.\scripts\run_airflow_docker.ps1` |
 
-### Опционально
+
 
 | Действие | Команда |
 |----------|---------|

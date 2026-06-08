@@ -5,7 +5,6 @@
 | Файл | Описание |
 |------|----------|
 | [otchet.md](otchet.md) | Результаты анализа, таблицы, графики |
-| [demo.md](demo.md) | Все команды запуска |
 | [model.md](model.md) | ERD, витрины |
 | [sql_postgres.md](sql_postgres.md) | PostgreSQL и Docker на Windows |
 | [airflow.md](airflow.md) | Airflow DAG |
